@@ -34,7 +34,16 @@
             <td th:text="${sb.datePlanted}">13/01/2011</td>
             <td th:text="${sb.covered}">yes</td>
             <td th:text="${sb.type}">Wireframe</td>
-            <td th:text="$sb.feature}">Electric Heating, Turf</td>
+            <td>
+	            <table>
+	                <tbody>
+	                  <tr th:each="feature,rowStat : ${sb.features}">
+	                    <td th:text="${rowStat.count}">1</td>
+	                    <td th:text="${feature.name}">Fertilizer</td>
+	                  </tr>
+	                </tbody>
+	              </table>
+              </td>
             <td>
               <table>
                 <tbody>

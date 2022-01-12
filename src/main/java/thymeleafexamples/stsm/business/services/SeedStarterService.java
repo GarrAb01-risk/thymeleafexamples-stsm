@@ -22,6 +22,8 @@ package thymeleafexamples.stsm.business.services;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -67,7 +69,7 @@ public class SeedStarterService {
         ss2.setDatePlanted(new Date());
         ss2.setFeatures(new Feature[] { Feature.SEEDSTARTER_SPECIFIC_SUBSTRATE, Feature.PH_CORRECTOR });
         ss2.setType(Type.PLASTIC);
-        ss1.getRows().add(new Row(varieties.findById(i), i));
+        ss2.getRows().add(new Row(varieties.findById(i), i));
         this.add(ss2);
     }
     
