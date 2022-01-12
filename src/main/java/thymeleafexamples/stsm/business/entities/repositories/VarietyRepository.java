@@ -67,9 +67,7 @@ public class VarietyRepository {
         this.varietiesById.put(var5.getId(), var5);
         
     }
-    
-    
-    
+
     public List<Variety> findAll() {
         return new ArrayList<Variety>(this.varietiesById.values());
     }

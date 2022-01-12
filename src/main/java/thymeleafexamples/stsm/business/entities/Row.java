@@ -25,14 +25,16 @@ public class Row {
 
     private Variety variety = null;
     private Integer seedsPerCell = null;
-    
-    
-    
-    
+
     public Row() {
         super();
     }
 
+    public Row(Variety variety, Integer seedsPerCell) {
+        super();
+        this.variety = variety;
+        this.seedsPerCell = seedsPerCell;
+    }
 
     public Variety getVariety() {
         return this.variety;

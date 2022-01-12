@@ -31,10 +31,10 @@ public class SeedStarter {
     private Boolean covered = null;
     private Type type = Type.PLASTIC;
     private Feature[] features = null;
-    
+
     private List<Row> rows = new ArrayList<Row>();
-    
-    
+
+
     public SeedStarter() {
         super();
     }
