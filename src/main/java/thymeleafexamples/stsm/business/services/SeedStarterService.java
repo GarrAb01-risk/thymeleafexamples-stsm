@@ -72,7 +72,7 @@ public class SeedStarterService {
         ss2.getRows().add(new Row(varieties.findById(i), i));
         this.add(ss2);
     }
-    
+
     public List<SeedStarter> findAll() {
         return this.seedstarterRepository.findAll();
     }
