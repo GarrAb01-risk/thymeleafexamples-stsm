@@ -1,12 +1,65 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
   <head>
-    <title>Test</title>
+    <title>Spring Thyme Seed Starter Manager</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/stsm.css" th:href="@{/css/stsm.css}"/>
   </head>
 
   <body>
+
+    <div>
+      <img src="../../images/stsmlogo.png" alt="STSM logo" title="STSM logo" 
+           th:src="@{/images/stsmlogo.png}" th:alt-title="#{title.application}"/>
+    </div>
+    
+    <div class="seedstarterlist">
+    
+      <h2 th:text="#{title.list}">Seed Starter List HARDCODED</h2>
+      
+      <table>
+        <thead>
+          <tr>
+            <th th:text="#{seedstarter.datePlanted}">Date Planted</th>
+            <th th:text="#{seedstarter.covered}">Covered</th>
+            <th th:text="#{seedstarter.type}">Type</th>
+            <th th:text="#{seedstarter.features}">Features</th>
+            <th th:text="#{seedstarter.rows}">Rows</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="sb : ${allSeedStarters}">
+            <td th:text="${sb.datePlanted}">13/01/2011</td>
+            <td th:text="${sb.covered}">yes</td>
+            <td th:text="${sb.type}">Wireframe</td>
+            <td>
+	            <table>
+	                <tbody>
+	                  <tr th:each="feature,rowStat : ${sb.features}">
+	                    <td th:text="${rowStat.count}">1</td>
+	                    <td th:text="${feature.name}">Fertilizer</td>
+	                  </tr>
+	                </tbody>
+	              </table>
+              </td>
+            <td>
+              <table>
+                <tbody>
+                  <tr th:each="row,rowStat : ${sb.rows}">
+                    <td th:text="${rowStat.count}">1</td>
+                    <td th:text="${row.variety.name}">Thymus Thymi</td>
+                    <td th:text="${row.seedsPerCell}">12</td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+
   </body>
 </html>
